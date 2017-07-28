@@ -41,5 +41,58 @@ namespace CardLibUnitTests
             Assert.True(invalidRank);
 
         }
+
+        [Fact]
+        public void TestEqualsNull()
+        {
+            var ace = new CardRank(CardRank.RankNames.Ace);
+
+            bool equals = ace.Equals(null);
+
+            Assert.False(equals);
+        }
+
+        [Fact]
+        public void TestEqualsSelf()
+        {
+            var ace = new CardRank(CardRank.RankNames.Ace);
+
+            bool equals = ace.Equals(ace);
+
+            Assert.True(equals);
+        }
+
+        [Fact]
+        public void TestEqualsNotCardRank()
+        {
+            var ace = new CardRank(CardRank.RankNames.Ace);
+            var str = "A String";
+
+            bool equals = ace.Equals(str);
+
+            Assert.False(equals);
+        }
+
+        [Fact]
+        public void TestEqualsSameRank()
+        {
+            var ace = new CardRank(CardRank.RankNames.Ace);
+            var ace2 = new CardRank(CardRank.RankNames.Ace);
+
+            bool equals = ace.Equals(ace2);
+
+            Assert.True(equals);
+        }
+
+        [Fact]
+        public void TestEqualsNotEquals()
+        {
+            var ace = new CardRank(CardRank.RankNames.Ace);
+            var king = new CardRank(CardRank.RankNames.King);
+
+            bool equals = ace.Equals(king);
+
+            Assert.False(equals);
+        }
     }
 }

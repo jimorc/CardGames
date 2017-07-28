@@ -58,6 +58,25 @@ namespace PlayingCards
             return Rank;
         }
 
+        public override bool Equals(object obj)
+        {
+            if (obj == null || obj.GetType() != typeof(CardRank))
+            {
+                return false;
+            }
+            CardRank rank = (CardRank)obj;
+            if (rank == this)
+            {
+                return true;
+            }
+            if (rank.ToString().Equals(this.ToString()))
+            {
+                return true;
+            }
+            return false;
+            ;
+        }
+
         public string Rank
         {
             get
