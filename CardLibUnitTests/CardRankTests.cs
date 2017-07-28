@@ -6,6 +6,7 @@ namespace CardLibUnitTests
 {
     public class CardRankTests
     {
+        // test CardRank.ToString()
         [Theory]
         [InlineData(CardRank.RankNames.Two, "2")]
         [InlineData(CardRank.RankNames.Three, "3")]
@@ -29,6 +30,7 @@ namespace CardLibUnitTests
             Assert.Equal(value, rankString);
         }
 
+        // test CardRank constructor with invalid input.
         [Fact]
         public void TestConstructorInvalidValue()
         {
@@ -42,6 +44,7 @@ namespace CardLibUnitTests
 
         }
 
+        // test CardRank.Equals() with null input.
         [Fact]
         public void TestEqualsNull()
         {
@@ -52,6 +55,7 @@ namespace CardLibUnitTests
             Assert.False(equals);
         }
 
+        // tests CardRank.Equals against same object.
         [Fact]
         public void TestEqualsSelf()
         {
@@ -62,6 +66,7 @@ namespace CardLibUnitTests
             Assert.True(equals);
         }
 
+        // test CardRank.Equals with value that is not a CardRank.
         [Fact]
         public void TestEqualsNotCardRank()
         {
@@ -73,6 +78,7 @@ namespace CardLibUnitTests
             Assert.False(equals);
         }
 
+        // test CardRank.Equals with value that has same rank
         [Fact]
         public void TestEqualsSameRank()
         {
@@ -84,6 +90,7 @@ namespace CardLibUnitTests
             Assert.True(equals);
         }
 
+        // test CardRank.Equals against CardRank object that does not have same rank.
         [Fact]
         public void TestEqualsNotEquals()
         {
