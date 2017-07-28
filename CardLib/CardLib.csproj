@@ -40,6 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CardRank.cs" />
     <Compile Include="CardSuit.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
