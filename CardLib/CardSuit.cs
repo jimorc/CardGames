@@ -39,6 +39,29 @@ namespace PlayingCards
             return suitString;
         }
 
+        public override bool Equals(object obj)
+        {
+            if(obj == null || obj.GetType() != typeof(CardSuit))
+            {
+                return false;
+            }
+            CardSuit cSuit = (CardSuit)obj;
+            if(cSuit == this)
+            {
+                return true;
+            }
+            if(cSuit.ToString().Equals(this.ToString()))
+            {
+                return true;
+            }
+            return false;
+        }
+
+        public override int GetHashCode()
+        {
+            return suitString.GetHashCode();
+        }
+
         private readonly string suitString;
     }
 
