@@ -28,5 +28,18 @@ namespace CardLibUnitTests
 
             Assert.Equal(value, rankString);
         }
+
+        [Fact]
+        public void TestConstructorInvalidValue()
+        {
+            Exception ex = Assert.Throws<ArgumentOutOfRangeException>(()
+    => new CardRank((CardRank.RankNames)(-1)));
+
+            bool invalidRank = ex.Message.Contains(
+                "The rank value is invalid");
+
+            Assert.True(invalidRank);
+
+        }
     }
 }
