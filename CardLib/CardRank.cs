@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace PlayingCards
 {
-    public class CardRank
+    public class CardRank : IComparable<CardRank>
     {
         public enum RankNames
         {
@@ -80,6 +80,11 @@ namespace PlayingCards
         public override int GetHashCode()
         {
             return rank.GetHashCode();
+        }
+
+        public int CompareTo(CardRank cRank)
+        {
+            return this.rank.CompareTo(cRank.rank);
         }
 
         public string Rank

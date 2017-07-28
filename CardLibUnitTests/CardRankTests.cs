@@ -115,5 +115,53 @@ namespace CardLibUnitTests
 
             Assert.True(equals);
         }
+
+        // test CardRank.CompareTo with CardRank object of same value
+        [Fact]
+        public void TestCompareToSameValue()
+        {
+            var six = new CardRank(CardRank.RankNames.Six);
+            var six2 = new CardRank(CardRank.RankNames.Six);
+
+            var comp = six.CompareTo(six2);
+
+            Assert.True(comp == 0);
+        }
+
+        // test CardRank.CompareTo with CardRank object of less value
+        [Fact]
+        public void TestCompareToLess()
+        {
+            var six = new CardRank(CardRank.RankNames.Six);
+            var three = new CardRank(CardRank.RankNames.Three);
+
+            var comp = six.CompareTo(three);
+
+            Assert.True(comp > 0);
+        }
+
+        // test CardRank.CompareTo with CardRank object of greater value
+        [Fact]
+        public void TestCompareToGreater()
+        {
+            var six = new CardRank(CardRank.RankNames.Six);
+            var seven = new CardRank(CardRank.RankNames.Seven);
+
+            var comp = six.CompareTo(seven);
+
+            Assert.True(comp < 0);
+        }
+
+        // test CardRank.CompareTo with same object
+        [Fact]
+        public void TestCompareToSameObject()
+        {
+
+            var six = new CardRank(CardRank.RankNames.Six);
+
+            var comp = six.CompareTo(six);
+
+            Assert.True(comp == 0);
+        }
     }
 }
