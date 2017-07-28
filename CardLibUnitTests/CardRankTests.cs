@@ -156,7 +156,6 @@ namespace CardLibUnitTests
         [Fact]
         public void TestCompareToSameObject()
         {
-
             var six = new CardRank(CardRank.RankNames.Six);
 
             var comp = six.CompareTo(six);
