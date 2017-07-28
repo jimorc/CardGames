@@ -101,5 +101,19 @@ namespace CardLibUnitTests
 
             Assert.False(equals);
         }
+
+        // test CardRank.GetHashCode with two CardRank objects with same rank.
+        // Note: cannot test not equals because there is no guarantee that
+        // GetHashCode will return different values for different CardRank objects.
+        [Fact]
+        public void TestGetHashCodeEqualRanks()
+        {
+            var ace = new CardRank(CardRank.RankNames.Ace);
+            var ace2 = new CardRank(CardRank.RankNames.Ace);
+
+            bool equals = (ace.GetHashCode() == ace2.GetHashCode());
+
+            Assert.True(equals);
+        }
     }
 }

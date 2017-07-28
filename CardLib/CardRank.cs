@@ -77,12 +77,17 @@ namespace PlayingCards
             ;
         }
 
+        public override int GetHashCode()
+        {
+            return rank.GetHashCode();
+        }
+
         public string Rank
         {
             get => ranks[rank];
         }
 
-        private RankNames rank;
+        private readonly RankNames rank;
 
         static Dictionary<CardRank.RankNames, string> ranks =
             new Dictionary<CardRank.RankNames, string>();
