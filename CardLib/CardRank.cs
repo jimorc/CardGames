@@ -69,7 +69,7 @@ namespace PlayingCards
             {
                 return true;
             }
-            if (rank.ToString().Equals(this.ToString()))
+            if (rank.Rank.Equals(this.Rank))
             {
                 return true;
             }
@@ -79,10 +79,7 @@ namespace PlayingCards
 
         public string Rank
         {
-            get
-            {
-                return ranks[rank];
-            }
+            get => ranks[rank];
         }
 
         private RankNames rank;
